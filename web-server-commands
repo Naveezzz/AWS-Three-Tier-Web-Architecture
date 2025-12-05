@@ -1,0 +1,97 @@
+#!/bin/bash
+# =========================================
+# COMMANDS TO RUN IN THE WEB SERVER (FRONTEND EC2 INSTANCE)
+# =========================================
+# This script sets up the React frontend with Nginx
+
+# =========================================
+# SWITCH TO EC2-USER
+# =========================================
+sudo -su ec2-user
+cd /home/ec2-user
+
+# =========================================
+# COPY WEB-TIER CODE FROM S3
+# =========================================
+# ⚠️ IMPORTANT: Replace YOUR-BUCKET-NAME with your actual S3 bucket name
+sudo aws s3 cp s3://demo-mybucket-nav2/application-code/web-tier web-tier --recursive
+
+# Set proper permissions
+sudo chown -R ec2-user:ec2-user /home/ec2-user
+sudo chmod -R 755 /home/ec2-user/web-tier
+sudo chmod -R 755 /home/ec2-user
+
+# =========================================
+# INSTALLING NODEJS (FOR REACT)
+# =========================================
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+source ~/.bashrc
+
+# Install Node.js version 20
+nvm install 20
+nvm use 20
+
+# Verify installation
+node --version
+npm --version
+
+# =========================================
+# INSTALL DEPENDENCIES AND BUILD REACT APP
+# =========================================
+cd /home/ec2-user/web-tier
+
+# Install all npm dependencies
+npm install
+
+# Optional: Fix vulnerabilities
+# npm audit fix
+
+# =========================================
+# BUILD THE REACT APP FOR PRODUCTION
+# =========================================
+npm run build
+
+# Verify build was successful
+ls -la build/
+
+# =========================================
+# INSTALLING NGINX (WEB SERVER)
+# =========================================
+sudo yum install nginx -y
+
+# Backup original nginx configuration
+cd /etc/nginx
+sudo mv nginx.conf nginx-backup.conf
+
+# ⚠️ IMPORTANT: Replace YOUR-BUCKET-NAME with your actual S3 bucket name
+# Make sure nginx.conf has the correct Internal Load Balancer DNS
+sudo aws s3 cp s3://demo-mybucket-nav2/application-code/nginx.conf .
+
+# Set proper permissions
+sudo chmod -R 755 /home/ec2-user
+
+# =========================================
+# START AND ENABLE NGINX
+# =========================================
+# Test nginx configuration
+sudo nginx -t
+
+# Start nginx service
+sudo service nginx start
+
+# Enable nginx to start on boot
+sudo chkconfig nginx on
+
+# Restart nginx
+sudo service nginx restart
+
+# =========================================
+# VERIFY INSTALLATION
+# =========================================
+# Check nginx status
+sudo service nginx status
+
+# Test health check endpoint
+curl http://localhost/health
+
+echo "✅ Web tier setup complete!"
