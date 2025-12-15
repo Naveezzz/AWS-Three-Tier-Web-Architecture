@@ -8,6 +8,13 @@ Complete implementation of a 3-tier architecture with React frontend, Node.js ba
 Internet → External ALB → Web Tier (React + Nginx) → Internal ALB → App Tier (Node.js) → RDS MySQL
 ```
 
+## 🏗️ Architecture Diagram
+
+```
+<img width="1382" height="721" alt="AWS Three Tier Web Architecture diagram" src="https://github.com/user-attachments/assets/7fb7833a-7ede-465e-8a6d-07b8df9e209d" />
+
+```
+
 ## 📁 Project Structure
 
 ```
