@@ -11,7 +11,8 @@ Internet → External ALB → Web Tier (React + Nginx) → Internal ALB → App 
 ## 🏗️ Architecture Diagram
 
 ```
-![AWS Architecture - DrawIO](https://github.com/pandacloud1/AWS_Project1/assets/134182273/3e46931f-0802-48a7-b044-22cd2afde467)
+<img width="1369" height="627" alt="Screenshot (700)" src="https://github.com/user-attachments/assets/70159409-4f5c-4412-aaf0-8fecaa5d74fa" />
+
 ```
 
 ## 📁 Project Structure
