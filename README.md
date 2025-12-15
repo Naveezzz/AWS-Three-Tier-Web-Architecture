@@ -10,10 +10,7 @@ Internet → External ALB → Web Tier (React + Nginx) → Internal ALB → App 
 
 ## 🏗️ Architecture Diagram
 
-```
-<img width="1369" height="627" alt="Screenshot (700)" src="https://github.com/user-attachments/assets/70159409-4f5c-4412-aaf0-8fecaa5d74fa" />
-
-```
+<img width="1382" height="721" alt="AWS Three Tier Web Architecture diagram" src="https://github.com/user-attachments/assets/85cb835c-1aec-41a6-8e4d-71cda8b6bc6f" />
 
 ## 📁 Project Structure
 
