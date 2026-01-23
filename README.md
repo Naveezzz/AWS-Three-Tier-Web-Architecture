@@ -6,74 +6,54 @@ Complete production-ready 3-tier web application with React frontend, Node.js ba
 
 Live Demo: [https://yourapp.yourdomain.com](https://naveezzz.shop/) (Now do not connect !) (GoDaddy → Route53 → CloudFront)
 
-🏗️ Architecture Overview
-text
+🏗️ Architecture Overview:
 Internet → External ALB → Web Tier (React+Nginx) → Internal ALB → App Tier (Node.js) → RDS MySQL
      ↓
 CloudFront → S3 Static Frontend (Alternative Access)
 
 
-🏗️ Architecture Diagram
+🏗️ Architecture Diagram:
+
+
 <img width="1382" height="721" alt="AWS Three Tier Web Architecture diagram" src="https://github.com/user-attachments/assets/85cb835c-1aec-41a6-8e4d-71cda8b6bc6f" />
-📋 Infrastructure Architecture (6 Subnets - Dual AZ)
-text
-VPC: 10.0.0.0/16 (ap-south-1a, ap-south-1b)
 
-Public Subnets (Web Tier + ALB):
-├── AZ1: 10.0.1.0/24 (Public)
-└── AZ2: 10.0.2.0/24 (Public)
 
-Private App Subnets (App Tier):
-├── AZ1: 10.0.3.0/24 (Private)
-└── AZ2: 10.0.4.0/24 (Private)
+## 📁 Project Structure
 
-Private DB Subnets (RDS):
-├── AZ1: 10.0.5.0/24 (Private)
-└── AZ2: 10.0.6.0/24 (Private)
-📁 Complete Project Structure
-text
-AWS-3TIER-WEB-APP/
+```
+AWS_PROJECT-MAIN/
 ├── application-code/
-│   ├── app-tier/                    # Backend Node.js API (Private Subnets)
-│   │   ├── DbConfig.js             # RDS MySQL connection
-│   │   ├── index.js                # Express server (Port 4000)
-│   │   ├── package.json
-│   │   ├── health.js               # /api/health endpoint
-│   │   └── README.md
-│   │
-│   ├── web-tier/                   # Frontend React + Nginx (Public Subnets)
-│   │   ├── public/
-│   │   │   └── index.html
-│   │   ├── src/
-│   │   │   ├── components/
-│   │   │   │   ├── Login.jsx
-│   │   │   │   ├── Signup.jsx
-│   │   │   │   └── Dashboard.jsx
-│   │   │   ├── App.jsx
-│   │   │   ├── App.css
-│   │   │   └── index.js
-│   │   ├── nginx.conf              # Proxy to Internal ALB
-│   │   ├── package.json
-│   │   └── README.md
-│   │
-│   └── s3-frontend/                # Static S3 + CloudFront files
+│ ├── app-tier/ # Backend Node.js API
+│ │ ├── DbConfig.js # Database configuration
+│ │ ├── index.js # Express server
+│ │ ├── package.json
+│ │ └── README.md
+│ │
+│ ├── web-tier/ # Frontend React App
+│ │ ├── public/
+│ │ │ └── index.html
+│ │ ├── src/
+│ │ │ ├── components/
+│ │ │ │ ├── Login.jsx
+│ │ │ │ ├── Signup.jsx
+│ │ │ │ └── Dashboard.jsx
+│ │ │ ├── App.jsx
+│ │ │ ├── App.css
+│ │ │ └── index.js
+│ │ ├── package.json
+│ │ └── README.md
+│ │
+│ └── nginx.conf # Nginx configuration
 │
-├── deployment-scripts/
-│   ├── app-server-commands.sh      # Backend EC2 UserData
-│   ├── web-server-commands.sh      # Frontend EC2 UserData
-│   └── database-setup.sql          # RDS initialization
-│
-├── docs/
-│   ├── DEPLOYMENT-CHECKLIST.md
-│   ├── SECURITY-GROUPS.md
-│   └── COST-ANALYSIS.md
-│
-├── diagrams/
-│   └── architecture.png
-│
+├── app-server-commands # Backend setup script
+├── web-server-commands # Frontend setup script
+├── database-setup.sql # Database initialization
 ├── .gitignore
-├── README.md
-└── LICENSE
+├── DEPLOYMENT-CHECKLIST.md
+└── README.md
+```
+
+
 🛠️ Technology Stack
 Layer	Technology	Purpose
 Frontend	React 18.2.0 + Nginx	UI + Reverse Proxy
@@ -202,6 +182,10 @@ Total	$51	Free Tier: $0
 ✅ Security-First: 5 SGs + NACLs + IAM
 ✅ Complete Stack: Frontend → Backend → Database
 ✅ Cost Aware: $51/month optimized
+
+
+
+
 ![537854027-ce8af5c0-77b3-4ec6-8fba-2dddaf2f8df1](https://github.com/user-attachments/assets/d6682193-5ae7-4faa-9b67-b30cd2f65fec)
 ![537854066-d2c623f6-bd4d-4be6-be42-02b291e2feba](https://github.com/user-attachments/assets/081cb054-d919-4f2f-9cff-20e933d655dd)
 ![537854101-381c6c35-625c-4d42-8a6b-b05c2fb56908](https://github.com/user-attachments/assets/04e1e2ea-7c42-4ec3-a473-2972fb031dac)
