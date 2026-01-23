@@ -11,6 +11,8 @@ text
 Internet → External ALB → Web Tier (React+Nginx) → Internal ALB → App Tier (Node.js) → RDS MySQL
      ↓
 CloudFront → S3 Static Frontend (Alternative Access)
+
+
 🏗️ Architecture Diagram
 <img width="1382" height="721" alt="AWS Three Tier Web Architecture diagram" src="https://github.com/user-attachments/assets/85cb835c-1aec-41a6-8e4d-71cda8b6bc6f" />
 📋 Infrastructure Architecture (6 Subnets - Dual AZ)
