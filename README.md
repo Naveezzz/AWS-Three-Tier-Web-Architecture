@@ -2,7 +2,7 @@ AWS 3-Tier Web Application: Production-Ready Login & Signup App
 🚀 Project Overview
 Complete production-ready 3-tier web application with React frontend, Node.js backend, and RDS MySQL deployed across 6 subnets (2 AZs). Features custom GoDaddy domain, dual ALBs, Auto Scaling Groups, 5 Security Groups, CloudFront CDN, and SNS email alerts.
 
-Live Demo: https://yourapp.yourdomain.com (GoDaddy → Route53 → CloudFront)
+Live Demo: [https://yourapp.yourdomain.com](https://naveezzz.shop/) (Now do not connect !) (GoDaddy → Route53 → CloudFront)
 
 🏗️ Architecture Overview
 text
