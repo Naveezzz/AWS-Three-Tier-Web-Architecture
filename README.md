@@ -1,11 +1,4 @@
 AWS 3-Tier Web Application: Production-Ready Login & Signup App
-![537854027-ce8af5c0-77b3-4ec6-8fba-2dddaf2f8df1](https://github.com/user-attachments/assets/0e6690fa-d6ec-414c-9385-ee1a2b9c0f8b)
-![537854066-d2c623f6-bd4d-4be6-be42-02b291e2feba](https://github.com/user-attachments/assets/bbb3fc46-f7ce-4723-b64f-39af2a0997b7)
-![537854101-381c6c35-625c-4d42-8a6b-b05c2fb56908](https://github.com/user-attachments/assets/7844d6ac-46ab-45db-a77d-c0122f852381)
-![537854130-f097e586-053b-4506-bc26-7faf560a17db](https://github.com/user-atta![537854180-4a48552c-70fd-4524-b789-f551964be953](https://github.com/user-attachments/assets/708046d5-24a5-45c6-b072-6997e793890a)
-chments/assets/4c57426f-1b74-429b-850f-70e9748daa38)
-![537854215-00eab09e-211f-4e6c-9478-e4457938a78c](https://github.com/user-attachments/assets/3c1c7abc-74b0-432e-8214-081484dc569b)
-
 🚀 Project Overview
 Complete production-ready 3-tier web application with React frontend, Node.js backend, and RDS MySQL deployed across 6 subnets (2 AZs). Features custom GoDaddy domain, dual ALBs, Auto Scaling Groups, 5 Security Groups, CloudFront CDN, and SNS email alerts.
 
@@ -205,3 +198,16 @@ Total	$51	Free Tier: $0
 ✅ Security-First: 5 SGs + NACLs + IAM
 ✅ Complete Stack: Frontend → Backend → Database
 ✅ Cost Aware: $51/month optimized
+![537854027-ce8af5c0-77b3-4ec6-8fba-2dddaf2f8df1](https://github.com/user-attachments/assets/d6682193-5ae7-4faa-9b67-b30cd2f65fec)
+![537854066-d2c623f6-bd4d-4be6-be42-02b291e2feba](https://github.com/user-attachments/assets/081cb054-d919-4f2f-9cff-20e933d655dd)
+![537854101-381c6c35-625c-4d42-8a6b-b05c2fb56908](https://github.com/user-attachments/assets/04e1e2ea-7c42-4ec3-a473-2972fb031dac)
+![537854130-f097e586-053b-4506-bc26-7faf560a17db](https://github.com/user-attachments/assets/c1c3aa52-2148-44d9-bf16-3dac151de58f)
+![537854180-4a48552c-70fd-4524-b789-f551964be953](https://github.com/user-attachments/assets/d1ce2086-1b92-4c9c-87ea-b9f74f3cf214)
+![537854215-00eab09e-211f-4e6c-9478-e4457938a78c](https://github.com/user-attachments/assets/6e00c847-042c-4b91-81e9-0e41516d060a)
+
+
+
+
+
+
+
